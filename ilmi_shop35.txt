@@ -1,0 +1,51 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Jum Jan 29 13:33:06 2021
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> conn ilmi;
+Enter password:
+Connected.
+SQL> show user;
+USER is "ILMI"
+
+SQL> create table stok_shop
+  2  (kode_shop varchar (10) not null ,
+  3  nama_item varchar (15) not null,
+  4  stok varchar (5) not null,
+  5  satuan varchar (15) not null,
+  6  harga_pokok varchar (15) not null);
+
+Table created.
+
+SQL> insert all
+  2  into stok_shop values ('3501','Luwak_Kopi','154','Renceng','Rp 10.000')
+  3  into stok_shop values ('3502','AngetSari_Susu','10','Renceng','Rp 9.000')
+  4  into stok_shop values ('3504','Indomie_Soto','5','pcs','Rp 2.500')
+  5  select * from dual;
+
+3 rows created.
+
+SQL> desc stok_shop;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ KODE_SHOP                                 NOT NULL VARCHAR2(10)
+ NAMA_ITEM                                 NOT NULL VARCHAR2(15)
+ STOK                                      NOT NULL VARCHAR2(5)
+ SATUAN                                    NOT NULL VARCHAR2(10)
+ HARGA_POKOK                               NOT NULL VARCHAR2(15)
+
+SQL> select *from stok_shop;
+
+KODE_SHOP  NAMA_ITEM       STOK  SATUAN     HARGA_POKOK
+---------- --------------- ----- ---------- ---------------
+3501       Luwak_Kopi      154   Renceng    Rp 10.000
+3502       AngetSari_Susu  10    Renceng    Rp 9.000
+3504       Indomie_Soto    5     Pcs        Rp 2.500
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
+

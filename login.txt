@@ -1,0 +1,11 @@
+SQL> create table login_admin
+  2  (user_name varchar2 (10) primary key,
+  3  password varchar2 (10) not null);
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
